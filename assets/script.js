@@ -27,13 +27,22 @@ breakDurationInput.value = "5";
 
 let isClockStopped = true;
 
-const progressBar = new ProgressBar.Circle("#pomodoro-timer", {
-    strokeWidth: 2,
-    text: {
-      value: "25:00"
-    },
-    trailColor: "#f4f4f4",
+const progressBar = new ProgressBar.SemiCircle("#pomodoro-timer", {
+    strokeWidth: 6,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#33fcff',
+      text: {
+        value: "25:00"
+      },
+    trailColor: '#91b9ba',
+    trailWidth: 1,
+    svgStyle: null
   });
+
+  progressBar.animate(1.0);
+
+  
 
 // START
 startButton.addEventListener("click", () => {
@@ -207,4 +216,5 @@ const togglePlayPauseIcon = reset => {
     return (timeSpentInCurrentSession / sessionDuration) * 10;
   };
 
-})
+});
+
