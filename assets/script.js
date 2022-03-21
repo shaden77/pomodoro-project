@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 
 const startButton = document.querySelector("#pomodoro-start");
 const stopButton = document.querySelector("#pomodoro-stop");
@@ -206,3 +207,4 @@ const togglePlayPauseIcon = reset => {
     return (timeSpentInCurrentSession / sessionDuration) * 10;
   };
 
+})
