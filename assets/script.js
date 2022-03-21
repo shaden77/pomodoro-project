@@ -205,3 +205,4 @@ const togglePlayPauseIcon = reset => {
       type === "Work" ? workSessionDuration : breakSessionDuration;
     return (timeSpentInCurrentSession / sessionDuration) * 10;
   };
+
