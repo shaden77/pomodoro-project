@@ -38,6 +38,9 @@
         <div id="pomodoro-container">
           <div id="pomodoro-clock">
             <div id="pomodoro-timer"></div>
+            <div>
+              <input class="input" type="text" id="pomodoro-clock-task" placeholder="Enter task here" />
+            </div>
             <div id="pomodoro-clock-actions">
               <button class="button" id="pomodoro-start">Start</button>
               <button class="button" id="pomodoro-pause">Pause</button>
@@ -45,14 +48,39 @@
             </div>
           </div>
         </div>
+<br>
+        <div id="pomodoro-clock-title">
+          <span>
+            Changes made here will reflect at the start of the next work /
+            break session
+          </span>
+        </div>
+        <br>
+        <div id="pomodoro-clock-actions">
+          <div class="pomodoro-input">
+            <label>Work Duration</label>
+            <input name="input-work-duration" id="input-work-duration" type="number" class="input"/>
+          </div>
+          <div class="pomodoro-input">
+            <label>Break Duration</label>
+            <input name="input-break-duration" id="input-break-duration" type="number" class="input"/>
+          </div>
+        </div>
+
       </div>
     </div>
 
 
 
+    <!-- Sessions -->
+    <br>
+    <div class="box" id="pomodoro-info">
+      <h3><strong>Session History</strong></h3>
+      <ul id="pomodoro-sessions"></ul>
+    </div>
   </section>
 
-<!-- Footer Section -->
+  <!-- Footer Section -->
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
