@@ -1,7 +1,5 @@
-const pomodoroTimer = document.querySelector("#pomodoro-timer");
 
 const startButton = document.querySelector("#pomodoro-start");
-const pauseButton = document.querySelector("#pomodoro-pause");
 const stopButton = document.querySelector("#pomodoro-stop");
 
 let isClockRunning = false;
@@ -28,15 +26,19 @@ breakDurationInput.value = "5";
 
 let isClockStopped = true;
 
+const progressBar = new ProgressBar.Circle("#pomodoro-timer", {
+    strokeWidth: 2,
+    text: {
+      value: "25:00"
+    },
+    trailColor: "#f4f4f4",
+  });
+
 // START
 startButton.addEventListener("click", () => {
     toggleClock();
 });
 
-// PAUSE
-pauseButton.addEventListener("click", () => {
-    toggleClock();
-});
 
 // STOP
 stopButton.addEventListener("click", () => {
@@ -57,10 +59,12 @@ const minuteToSeconds = mins => {
 };
 
 const toggleClock = (reset) => {
+    togglePlayPauseIcon(reset);
     if (reset) {
         // STOP THE TIMER
         stopClock();
     } else {
+        console.log(isClockStopped);
 
         if (isClockStopped) {
             setUpdatedTimers();
@@ -73,14 +77,15 @@ const toggleClock = (reset) => {
             isClockRunning = false;
         } else {
             // START THE TIMER
-            isClockRunning = true;
-
             clockTimer = setInterval(() => {
                 // decrease time left / increase time spent
                 stepDown();
                 displayCurrentTimeLeftInSession();
+                progressBar.set(calculateSessionProgress())
             }, 1000);
+            isClockRunning = true;
         }
+        showStopIcon();
     }
 };
 
@@ -96,7 +101,7 @@ const displayCurrentTimeLeftInSession = () => {
     }
     if (hours > 0) result += `${hours}:`;
     result += `${addLeadingZeroes(minutes)}:${addLeadingZeroes(seconds)}`;
-    pomodoroTimer.innerText = result.toString();
+    progressBar.text.innerText = result.toString();
 };
 
 const stopClock = () => {
@@ -171,3 +176,32 @@ const setUpdatedTimers = () => {
         breakSessionDuration = currentTimeLeftInSession;
     }
 };
+
+const togglePlayPauseIcon = reset => {
+    const playIcon = document.querySelector("#play-icon");
+    const pauseIcon = document.querySelector("#pause-icon");
+    if (reset) {
+      // when resetting -> always revert to play icon
+      if (playIcon.classList.contains("hidden")) {
+        playIcon.classList.remove("hidden");
+      }
+      if (!pauseIcon.classList.contains("hidden")) {
+        pauseIcon.classList.add("hidden");
+      }
+    } else {
+      playIcon.classList.toggle("hidden");
+      pauseIcon.classList.toggle("hidden");
+    }
+  };
+
+  const showStopIcon = () => {
+    const stopButton = document.querySelector("#pomodoro-stop");
+    stopButton.classList.remove("hidden");
+  };
+
+  const calculateSessionProgress = () => {
+    // calculate the completion rate of this session
+    const sessionDuration =
+      type === "Work" ? workSessionDuration : breakSessionDuration;
+    return (timeSpentInCurrentSession / sessionDuration) * 10;
+  };
