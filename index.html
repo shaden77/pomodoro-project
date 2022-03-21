@@ -26,7 +26,7 @@
   </section>
 
   <!-- Main Section -->
-  <section class="section is-large has-background-danger">
+  <section class="section is-large has-background-dark">
 
     <!-- Notes & Rain Buttons -->
     <nav class="level">
@@ -36,21 +36,21 @@
 
     <!-- Pomodoro Timer -->
     <div class="container">
-      <div class="box">
+      <div class="box has-background-grey-dark">
         <div id="pomodoro-container">
           
           <div id="pomodoro-clock">
             <div id="pomodoro-timer" class=""></div>
             <br>
             <div>
-              <input class="input" type="text" id="pomodoro-clock-task" placeholder="Enter task here" />
+              <input class="input is-focused is-rounded has-background-grey-lighter" type="text" id="pomodoro-clock-task" placeholder="Enter task here" />
             </div>
             <div id="pomodoro-clock-actions">
-              <button class="button" id="pomodoro-start">
+              <button class="button is-rounded is-link" id="pomodoro-start">
                 <i class="fas fa-play" id="play-icon"></i>
                 <i class="fas fa-pause hidden" id="pause-icon"></i>
               </button>
-              <button class="button" id="pomodoro-stop" >
+              <button class="button is-rounded is-danger" id="pomodoro-stop" >
                 <i class="fas fa-stop"></i>
               </button>
             </div>
@@ -67,25 +67,22 @@
         <div id="pomodoro-clock-actions">
           <div class="pomodoro-input">
             <label>Work Duration</label>
-            <input name="input-work-duration" id="input-work-duration" type="number" class="input"/>
+            <input name="input-work-duration" id="input-work-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter"/>
           </div>
           <div class="pomodoro-input">
             <label>Break Duration</label>
-            <input name="input-break-duration" id="input-break-duration" type="number" class="input"/>
+            <input name="input-break-duration" id="input-break-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter"/>
           </div>
         </div>
-
+           <!-- Sessions --> 
+        <br>
+        <div class="box has-background-primary" id="pomodoro-info">
+          <h3><strong>Session History</strong></h3>
+          <ul id="pomodoro-sessions"></ul>
+        </div>
       </div>
     </div>
-
-
-
-    <!-- Sessions -->
-    <br>
-    <div class="box" id="pomodoro-info">
-      <h3><strong>Session History</strong></h3>
-      <ul id="pomodoro-sessions"></ul>
-    </div>
+    
   </section>
 
   <!-- Footer Section -->
