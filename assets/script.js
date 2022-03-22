@@ -27,16 +27,22 @@ breakDurationInput.value = "5";
 
 let isClockStopped = true;
 
-const progressBar = new ProgressBar.SemiCircle("#pomodoro-timer", {
+const progressBar = new ProgressBar.Circle("#pomodoro-timer", {
     strokeWidth: 6,
-    easing: 'easeInOut',
+    easing: 'bounce',
     duration: 1400,
     color: '#33fcff',
       text: {
-        value: "25:00"
+        value: "25:00",
+        style: {
+            position: 'absolute',
+            left: '33%',
+            top: '36%',
+            fontSize: "200px"
+        }
       },
     trailColor: '#91b9ba',
-    trailWidth: 1,
+    trailWidth: 2,
     svgStyle: null
   });
 
