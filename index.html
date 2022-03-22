@@ -30,27 +30,28 @@
 
     <!-- Notes & Rain Buttons -->
     <nav class="level">
-      <button class="button is-warning is-rounded">Quick Notes</button>
-      <button class="button is-info is-rounded">Rain Sounds</button>
+      <button class="button is-warning is-rounded is-medium">Quick Notes</button>
+      <button class="button is-info is-rounded is-medium">Rain Sounds</button>
     </nav>
 
     <!-- Pomodoro Timer -->
     <div class="container">
-      <div class="box has-background-grey-dark">
+      <div class="box has-background-grey-dark has-text-centered">
         <div id="pomodoro-container">
           
           <div id="pomodoro-clock">
             <div id="pomodoro-timer" class=""></div>
             <br>
             <div>
-              <input class="input is-focused is-rounded has-background-grey-lighter" type="text" id="pomodoro-clock-task" placeholder="Enter task here" />
+              <input class="input is-focused is-rounded has-background-grey-lighter is-medium" type="text" id="pomodoro-clock-task" placeholder="Enter task here" />
             </div>
-            <div id="pomodoro-clock-actions">
-              <button class="button is-rounded is-link" id="pomodoro-start">
+            <br>
+            <div id="pomodoro-clock-actions" class="">
+              <button class="button is-rounded is-link is-large" id="pomodoro-start">
                 <i class="fas fa-play" id="play-icon"></i>
                 <i class="fas fa-pause hidden" id="pause-icon"></i>
               </button>
-              <button class="button is-rounded is-danger" id="pomodoro-stop" >
+              <button class="button is-rounded is-danger is-large" id="pomodoro-stop" >
                 <i class="fas fa-stop"></i>
               </button>
             </div>
@@ -66,12 +67,13 @@
         <br>
         <div id="pomodoro-clock-actions">
           <div class="pomodoro-input">
-            <label>Work Duration</label>
-            <input name="input-work-duration" id="input-work-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter"/>
+            <label class="label is-large">Work Duration</label>
+            <input name="input-work-duration" id="input-work-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter is-medium"/>
           </div>
+          <br>
           <div class="pomodoro-input">
-            <label>Break Duration</label>
-            <input name="input-break-duration" id="input-break-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter"/>
+            <label class="label is-large">Break Duration</label>
+            <input name="input-break-duration" id="input-break-duration" type="number" class="input is-rounded is-primary has-background-grey-lighter is-medium"/>
           </div>
         </div>
            <!-- Sessions --> 
