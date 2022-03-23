@@ -1,7 +1,7 @@
 Aquadoro!
 =========
 ### Description:
-A unique pomdoro timer used for productivity with any tasks. Features include: task, work, and break time inputs, start & stop buttons, session history, integrated rain sounds playlist, and  pomodoro facts + how to.
+A unique pomdoro timer used for productivity with any tasks. Features include: task, work, and break time inputs, start/pause & stop buttons, session history, integrated rain sounds playlist, and  pomodoro facts + how to.
 
 (APIs Used: Spotify API & ProgressBar.js API)
 
